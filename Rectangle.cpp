@@ -41,8 +41,9 @@ void Rectangle::update()
 
 
 
-    if (abs(this->objective.x - this->shape.getPosition().x)<5 || abs(this->objective.y - this->shape.getPosition().y)<5){
+    if (abs(this->objective.x - this->shape.getPosition().x)<5 && abs(this->objective.y - this->shape.getPosition().y)<5){
         this->shape.setFillColor(Color::Green);
+        this->shape.setPosition(objective);
     }else {
     this->shape.move(speed);
         this->shape.setFillColor(Color::Red);
@@ -59,6 +60,8 @@ void Rectangle::setObjective(Vector2f objective)
 {
     this->vel = 5;
     this->objective = objective;
+    //this->difx= objective.x - this->shape.getPosition().x + (this->shape.getSize().x/2);
+    //this->dify= objective.y - this->shape.getPosition().y + (this->shape.getSize().y/2);
     this->difx= objective.x - this->shape.getPosition().x;
     this->dify= objective.y - this->shape.getPosition().y;
     this->distot = sqrt (pow(difx,2) + pow(dify,2));
