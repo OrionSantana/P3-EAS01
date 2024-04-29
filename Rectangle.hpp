@@ -9,8 +9,13 @@ private:
     Vector2f speed;
     Vector2f objective;
     RectangleShape shape;
-
 public:
+    float vel;
+    float difx;
+    float dify;
+    float distot;
+    float go;
+
     Rectangle(Vector2f size);
     Rectangle(Vector2f size, Vector2i position);
 
